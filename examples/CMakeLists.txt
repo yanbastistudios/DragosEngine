@@ -1,0 +1,2 @@
+add_subdirectory(2D_demo)
+add_subdirectory(3D_demo)

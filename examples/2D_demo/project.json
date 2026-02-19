@@ -1,0 +1,14 @@
+{
+  "name": "Dragos 2D Demo",
+  "id": "dragos.2d.demo",
+  "version": "0.1.0",
+  "type": "example",
+  "entry": "scenes/main.scene",
+  "engineVersion": "0.1",
+  "platforms": ["windows", "linux", "macos", "android", "ios"],
+  "description": "Minimal 2D demo for DragosEngine. Uses Box2D for physics.",
+  "assets": {
+    "textures": ["assets/textures/player.png", "assets/textures/bg.png"],
+    "audio": []
+  }
+}

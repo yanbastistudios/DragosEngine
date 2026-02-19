@@ -1,0 +1,16 @@
+/build/
+/bin/
+/obj/
+*.user
+*.suo
+*.pdb
+*.exe
+*.dll
+*.so
+*.dylib
+.vscode/
+.idea/
+*.log
+*.cache
+third_party/**/build/
+assets/**/cache/
