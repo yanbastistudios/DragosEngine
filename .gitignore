@@ -1,16 +1,22 @@
-/build/
-/bin/
-/obj/
-*.user
+# Build
+build/
+bin/
+obj/
+
+# IDE
+.vscode/
 *.suo
-*.pdb
+*.user
+*.vcxproj.user
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs
+*.log
+
+# Generated
 *.exe
 *.dll
-*.so
-*.dylib
-.vscode/
-.idea/
-*.log
-*.cache
-third_party/**/build/
-assets/**/cache/
