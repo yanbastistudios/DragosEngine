@@ -10,21 +10,43 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Set up job
         uses: actions/checkout@v4
 
+      - name: Setup CMake
+        uses: jwlawson/actions-setup-cmake@v1
+        with:
+          cmake-version: '3.27.0' # gerekirse sürümü değiştir
+
+      - name: Debug info
+        run: |
+          echo "=== runner info ==="
+          uname -a
+          echo "=== cmake version ==="
+          cmake --version || true
+          echo "=== python version ==="
+          python3 --version || true
+          echo "=== workspace files (top-level) ==="
+          ls -la
+          echo "=== root CMakeLists.txt (first 200 lines) ==="
+          if [ -f CMakeLists.txt ]; then head -n 200 CMakeLists.txt; else echo "CMakeLists.txt not found"; fi
+
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential cmake
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential ninja-build pkg-config
 
       - name: Configure
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
 
       - name: Build
-        run: cmake --build build -- -j$(nproc)
+        run: cmake --build build --config Release -- -j$(nproc)
 
       - name: Run tests
         run: |
           if [ -d build ]; then
             cd build
             ctest --output-on-failure || true
+          else
+            echo "Build directory not found, skipping tests"
           fi
