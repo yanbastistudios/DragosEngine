@@ -1,22 +1,56 @@
 # Build
-build/
-bin/
-obj/
+/build/
+/bin/
+/obj/
+/out/
 
-# IDE
-.vscode/
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Visual Studio
+.vs/
+*.vcxproj.user
 *.suo
 *.user
-*.vcxproj.user
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
 
 # OS
 Thumbs.db
 .DS_Store
 desktop.ini
 
-# Logs
+# Logs and temp
 *.log
+*.tmp
 
-# Generated
+# Compiled objects and binaries
+*.o
+*.obj
 *.exe
 *.dll
+*.so
+*.dylib
+
+# Archives and packages
+*.zip
+*.tar.gz
+*.7z
+
+# Generated files
+*.ilk
+*.pdb
+
+# Unity / game engine common (if any)
+Library/
+Temp/
+Build/
+
+# Git LFS attributes file is tracked separately
+.gitattributes
