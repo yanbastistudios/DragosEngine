@@ -1,2 +1,9 @@
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
+ekledin filter=lfs diff=lfs merge=lfs -text
+ama filter=lfs diff=lfs merge=lfs -text
+tekrar filter=lfs diff=lfs merge=lfs -text
+sorun filter=lfs diff=lfs merge=lfs -text
+yok filter=lfs diff=lfs merge=lfs -text
+\# filter=lfs diff=lfs merge=lfs -text
+zaten filter=lfs diff=lfs merge=lfs -text
